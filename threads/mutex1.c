@@ -8,8 +8,7 @@ struct foo {
 	/* ... more stuff here ... */
 };
 
-struct foo *
-foo_alloc(int id) /* allocate the object */
+struct foo * foo_alloc(int id) /* allocate the object */
 {
 	struct foo *fp;
 

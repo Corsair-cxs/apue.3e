@@ -16,8 +16,7 @@ struct foo {
 	/* ... more stuff here ... */
 };
 
-struct foo *
-foo_alloc(int id) /* allocate the object */
+struct foo * foo_alloc(int id) /* allocate the object */
 {
 	struct foo	*fp;
 	int			idx;
@@ -48,8 +47,7 @@ void foo_hold(struct foo *fp) /* add a reference to the object */
 	pthread_mutex_unlock(&fp->f_lock);
 }
 
-struct foo *
-foo_find(int id) /* find an existing object */
+struct foo * foo_find(int id) /* find an existing object */
 {
 	struct foo	*fp;
 

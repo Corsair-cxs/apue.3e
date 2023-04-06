@@ -136,8 +136,7 @@ static int type_to_flags(const char *__restrict type)
 	return(flags);
 }
 
-static off_t
-find_end(char *buf, size_t len)
+static off_t find_end(char *buf, size_t len)
 {
 	off_t off = 0;
 

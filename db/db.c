@@ -81,8 +81,7 @@ static void    _db_writeptr(DB *, off_t, off_t);
 /*
  * Open or create a database.  Same arguments as open(2).
  */
-DBHANDLE
-db_open(const char *pathname, int oflag, ...)
+DBHANDLE db_open(const char *pathname, int oflag, ...)
 {
 	DB			*db;
 	int			len, mode;
@@ -168,8 +167,7 @@ db_open(const char *pathname, int oflag, ...)
 /*
  * Allocate & initialize a DB structure and its buffers.
  */
-static DB *
-_db_alloc(int namelen)
+static DB * _db_alloc(int namelen)
 {
 	DB		*db;
 
@@ -299,8 +297,7 @@ static int _db_find_and_lock(DB *db, const char *key, int writelock)
 /*
  * Calculate the hash value for a key.
  */
-static DBHASH
-_db_hash(DB *db, const char *key)
+static DBHASH _db_hash(DB *db, const char *key)
 {
 	DBHASH		hval = 0;
 	char		c;
@@ -316,8 +313,7 @@ _db_hash(DB *db, const char *key)
  * the free list pointer, a hash table chain ptr, or an
  * index record chain ptr.
  */
-static off_t
-_db_readptr(DB *db, off_t offset)
+static off_t _db_readptr(DB *db, off_t offset)
 {
 	char	asciiptr[PTR_SZ + 1];
 
@@ -336,8 +332,7 @@ _db_readptr(DB *db, off_t offset)
  * set db->datoff and db->datlen to the offset and length of the
  * corresponding data record in the data file.
  */
-static off_t
-_db_readidx(DB *db, off_t offset)
+static off_t _db_readidx(DB *db, off_t offset)
 {
 	ssize_t				i;
 	char			*ptr1, *ptr2;
