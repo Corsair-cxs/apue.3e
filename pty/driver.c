@@ -1,7 +1,6 @@
 #include "apue.h"
 
-void
-do_driver(char *driver)
+void do_driver(char *driver)
 {
 	pid_t	child;
 	int		pipe[2];

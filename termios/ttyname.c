@@ -15,8 +15,7 @@ static struct devdir	*head;
 static struct devdir	*tail;
 static char				pathname[_POSIX_PATH_MAX + 1];
 
-static void
-add(char *dirname)
+static void add(char *dirname)
 {
 	struct devdir	*ddp;
 	int				len;
@@ -49,8 +48,7 @@ add(char *dirname)
 	}
 }
 
-static void
-cleanup(void)
+static void cleanup(void)
 {
 	struct devdir	*ddp, *nddp;
 
@@ -65,8 +63,7 @@ cleanup(void)
 	tail = NULL;
 }
 
-static char *
-searchdir(char *dirname, struct stat *fdstatp)
+static char* searchdir(char *dirname, struct stat *fdstatp)
 {
 	struct stat		devstat;
 	DIR				*dp;
@@ -106,8 +103,7 @@ searchdir(char *dirname, struct stat *fdstatp)
 	return(NULL);
 }
 
-char *
-ttyname(int fd)
+char* ttyname(int fd)
 {
 	struct stat		fdstat;
 	struct devdir	*ddp;

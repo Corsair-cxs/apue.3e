@@ -1,8 +1,7 @@
 #include "apue.h"
 #include <fcntl.h>
 
-int
-main(void)
+int main(void)
 {
 	if (open("tempfile", O_RDWR) < 0)
 		err_sys("open error");

@@ -6,8 +6,7 @@
 #define	NAME     "alonglonglonglonglonglonglonglonglonglongname"
 #define MAXSZ    (10*8192)
 
-int
-main(void)
+int main(void)
 {
 	int		i;
 	size_t	size;

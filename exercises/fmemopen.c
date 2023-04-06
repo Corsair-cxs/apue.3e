@@ -93,8 +93,7 @@ fmemopen(void *__restrict buf, size_t size,
 	return(fp);
 }
 
-static int
-type_to_flags(const char *__restrict type)
+static int type_to_flags(const char *__restrict type)
 {
 	const char *cp;
 	int flags = 0;
@@ -150,8 +149,7 @@ find_end(char *buf, size_t len)
 	return(off);
 }
 
-static int
-mstream_read(void *cookie, char *buf, int len)
+static int mstream_read(void *cookie, char *buf, int len)
 {
 	int nr;
 	struct memstream *ms = cookie;
@@ -170,8 +168,7 @@ mstream_read(void *cookie, char *buf, int len)
 	return(nr);
 }
 
-static int
-mstream_write(void *cookie, const char *buf, int len)
+static int mstream_write(void *cookie, const char *buf, int len)
 {
 	int nw, off;
 	struct memstream *ms = cookie;
@@ -228,8 +225,7 @@ mstream_seek(void *cookie, fpos_t pos, int whence)
 	return(off);
 }
 
-static int
-mstream_close(void *cookie)
+static int mstream_close(void *cookie)
 {
 	struct memstream *ms = cookie;
 

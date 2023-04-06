@@ -1,7 +1,6 @@
 #include "apue.h"
 
-int
-main(void)
+int main(void)
 {
 	int		n, int1, int2;
 	char	line[MAXLINE];

@@ -4,8 +4,7 @@
 #include <sys/ioctl.h>
 #endif
 
-static void
-pr_winsize(int fd)
+static void pr_winsize(int fd)
 {
 	struct winsize	size;
 
@@ -14,15 +13,13 @@ pr_winsize(int fd)
 	printf("%d rows, %d columns\n", size.ws_row, size.ws_col);
 }
 
-static void
-sig_winch(int signo)
+static void sig_winch(int signo)
 {
 	printf("SIGWINCH received\n");
 	pr_winsize(STDIN_FILENO);
 }
 
-int
-main(void)
+int main(void)
 {
 	if (isatty(STDIN_FILENO) == 0)
 		exit(1);

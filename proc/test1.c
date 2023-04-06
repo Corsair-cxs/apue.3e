@@ -1,7 +1,6 @@
 #include "apue.h"
 
-int
-main(void)
+int main(void)
 {
 	pid_t	pid;
 

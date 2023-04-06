@@ -2,8 +2,7 @@
 
 static void	sig_quit(int);
 
-int
-main(void)
+int main(void)
 {
 	sigset_t	newmask, oldmask, pendmask;
 
@@ -36,8 +35,7 @@ main(void)
 	exit(0);
 }
 
-static void
-sig_quit(int signo)
+static void sig_quit(int signo)
 {
 	printf("caught SIGQUIT\n");
 	if (signal(SIGQUIT, SIG_DFL) == SIG_ERR)

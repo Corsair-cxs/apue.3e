@@ -25,27 +25,23 @@ s_alloc()
 	return(sp);
 }
 
-void
-s_free(struct slock *sp)
+void s_free(struct slock *sp)
 {
 	sem_close(sp->semp);
 	free(sp);
 }
 
-int
-s_lock(struct slock *sp)
+int s_lock(struct slock *sp)
 {
 	return(sem_wait(sp->semp));
 }
 
-int
-s_trylock(struct slock *sp)
+int s_trylock(struct slock *sp)
 {
 	return(sem_trywait(sp->semp));
 }
 
-int
-s_unlock(struct slock *sp)
+int s_unlock(struct slock *sp)
 {
 	return(sem_post(sp->semp));
 }

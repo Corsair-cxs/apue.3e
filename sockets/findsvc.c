@@ -9,8 +9,7 @@
 #include <netinet/in.h>
 #endif
 
-void
-print_family(struct addrinfo *aip)
+void print_family(struct addrinfo *aip)
 {
 	printf(" family ");
 	switch (aip->ai_family) {
@@ -31,8 +30,7 @@ print_family(struct addrinfo *aip)
 	}
 }
 
-void
-print_type(struct addrinfo *aip)
+void print_type(struct addrinfo *aip)
 {
 	printf(" type ");
 	switch (aip->ai_socktype) {
@@ -53,8 +51,7 @@ print_type(struct addrinfo *aip)
 	}
 }
 
-void
-print_protocol(struct addrinfo *aip)
+void print_protocol(struct addrinfo *aip)
 {
 	printf(" protocol ");
 	switch (aip->ai_protocol) {
@@ -75,8 +72,7 @@ print_protocol(struct addrinfo *aip)
 	}
 }
 
-void
-print_flags(struct addrinfo *aip)
+void print_flags(struct addrinfo *aip)
 {
 	printf("flags");
 	if (aip->ai_flags == 0) {
@@ -97,8 +93,7 @@ print_flags(struct addrinfo *aip)
 	}
 }
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	struct addrinfo		*ailist, *aip;
 	struct addrinfo		hint;

@@ -1,8 +1,7 @@
 #include "apue.h"
 #include <pwd.h>
 
-static void
-my_alarm(int signo)
+static void my_alarm(int signo)
 {
 	struct passwd	*rootptr;
 
@@ -12,8 +11,7 @@ my_alarm(int signo)
 	alarm(1);
 }
 
-int
-main(void)
+int main(void)
 {
 	struct passwd	*ptr;
 

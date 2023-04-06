@@ -6,14 +6,12 @@ sigset_t	mask;
 
 extern int already_running(void);
 
-void
-reread(void)
+void reread(void)
 {
 	/* ... */
 }
 
-void *
-thr_fn(void *arg)
+void* thr_fn(void *arg)
 {
 	int err, signo;
 
@@ -41,8 +39,7 @@ thr_fn(void *arg)
 	return(0);
 }
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int					err;
 	pthread_t			tid;

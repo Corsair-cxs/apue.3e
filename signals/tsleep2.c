@@ -3,8 +3,7 @@
 unsigned int	sleep2(unsigned int);
 static void		sig_int(int);
 
-int
-main(void)
+int main(void)
 {
 	unsigned int	unslept;
 
@@ -15,8 +14,7 @@ main(void)
 	exit(0);
 }
 
-static void
-sig_int(int signo)
+static void sig_int(int signo)
 {
 	int				i, j;
 	volatile int	k;

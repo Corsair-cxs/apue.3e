@@ -6,8 +6,7 @@ char	 errmsg[MAXLINE];
 char	*pathname;
 Client	*client = NULL;
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int		c;
 

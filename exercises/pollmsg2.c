@@ -22,8 +22,7 @@ struct threadinfo {
 	struct mymesg	m;
 };
 
-void *
-helper(void *arg)
+void* helper(void *arg)
 {
 	int					n;
 	struct threadinfo	*tip = arg;
@@ -42,8 +41,7 @@ helper(void *arg)
 	}
 }
 
-int
-main()
+int main()
 {
 	char				c;
 	int					i, n, err;

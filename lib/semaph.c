@@ -86,8 +86,7 @@ static struct sembuf	op_op[1] = {
  * We return the semaphore ID if all OK, else -1.
  */
 
-int
-sem_create(key_t key, int initval)
+int sem_create(key_t key, int initval)
 {
 	register int		id, semval;
 	union semun {
@@ -171,8 +170,7 @@ again:
  * We return the semaphore ID if all OK, else -1.
  */
 
-int
-sem_open(key_t key)
+int sem_open(key_t key)
 {
 	register int	id;
 
@@ -204,8 +202,7 @@ sem_open(key_t key)
  * Most other processes should use sem_close() below.
  */
 
-void
-sem_rm(int id)
+void sem_rm(int id)
 {
 	if (semctl(id, 0, IPC_RMID, 0) < 0)
 		err_sys("can't IPC_RMID");
@@ -219,8 +216,7 @@ sem_rm(int id)
  * if this was the last one, we can remove the semaphore.
  */
 
-void
-sem_close(int id)
+void sem_close(int id)
 {
 	register int	semval;
 
@@ -258,8 +254,7 @@ sem_close(int id)
  * Dijkstra's P operation.  Tanenbaum's DOWN operation.
  */
 
-void
-sem_wait(int id)
+void sem_wait(int id)
 {
 	sem_op(id, -1);
 }
@@ -269,8 +264,7 @@ sem_wait(int id)
  * Dijkstra's V operation.  Tanenbaum's UP operation.
  */
 
-void
-sem_signal(int id)
+void sem_signal(int id)
 {
 	sem_op(id, 1);
 }
@@ -280,8 +274,7 @@ sem_signal(int id)
  * amount (positive or negative; amount can't be zero).
  */
 
-void
-sem_op(int id, int value)
+void sem_op(int id, int value)
 {
 	if ((op_op[0].sem_op = value) == 0)
 		err_sys("can't have value == 0");

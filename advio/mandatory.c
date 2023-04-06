@@ -3,8 +3,7 @@
 #include <fcntl.h>
 #include <sys/wait.h>
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int				fd;
 	pid_t			pid;

@@ -40,8 +40,7 @@ foo_alloc(int id) /* allocate the object */
 	return(fp);
 }
 
-void
-foo_hold(struct foo *fp) /* add a reference to the object */
+void foo_hold(struct foo *fp) /* add a reference to the object */
 {
 	pthread_mutex_lock(&hashlock);
 	fp->f_count++;
@@ -64,8 +63,7 @@ foo_find(int id) /* find an existing object */
 	return(fp);
 }
 
-void
-foo_rele(struct foo *fp) /* release a reference to the object */
+void foo_rele(struct foo *fp) /* release a reference to the object */
 {
 	struct foo	*tfp;
 	int			idx;

@@ -1,8 +1,7 @@
 #include "apue.h"
 #include <time.h>
 
-int
-main(void)
+int main(void)
 {
 	time_t		caltime;
 	struct tm	*tm;

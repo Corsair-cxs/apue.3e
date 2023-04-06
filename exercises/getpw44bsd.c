@@ -1,8 +1,7 @@
 #include "apue.h"
 #include <pwd.h>
 
-int
-main(void)		/* FreeBSD/Mac OS X version */
+int main(void)		/* FreeBSD/Mac OS X version */
 {
 	struct passwd	*ptr;
 

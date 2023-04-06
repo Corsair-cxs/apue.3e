@@ -6,8 +6,7 @@
 
 unsigned char buf[BSZ];
 
-unsigned char
-translate(unsigned char c)
+unsigned char translate(unsigned char c)
 {
 	if (isalpha(c)) {
 		if (c >= 'n')
@@ -22,8 +21,7 @@ translate(unsigned char c)
 	return(c);
 }
 
-int
-main(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
 	int	ifd, ofd, i, n, nw;
 

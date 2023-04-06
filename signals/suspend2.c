@@ -2,8 +2,7 @@
 
 volatile sig_atomic_t	quitflag;	/* set nonzero by signal handler */
 
-static void
-sig_int(int signo)	/* one signal handler for SIGINT and SIGQUIT */
+static void sig_int(int signo)	/* one signal handler for SIGINT and SIGQUIT */
 {
 	if (signo == SIGINT)
 		printf("\ninterrupt\n");
@@ -11,8 +10,7 @@ sig_int(int signo)	/* one signal handler for SIGINT and SIGQUIT */
 		quitflag = 1;	/* set flag for main loop */
 }
 
-int
-main(void)
+int main(void)
 {
 	sigset_t	newmask, oldmask, zeromask;
 

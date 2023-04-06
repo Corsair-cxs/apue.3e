@@ -4,8 +4,7 @@
 
 #define COPYINCR (1024*1024*1024)	/* 1 GB */
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int			fdin, fdout;
 	void		*src, *dst;

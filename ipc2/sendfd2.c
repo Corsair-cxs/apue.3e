@@ -22,8 +22,7 @@ static struct cmsghdr	*cmptr = NULL;	/* malloc'ed first time */
  * Pass a file descriptor to another process.
  * If fd<0, then -fd is sent back instead as the error status.
  */
-int
-send_fd(int fd, int fd_to_send)
+int send_fd(int fd, int fd_to_send)
 {
 	struct CREDSTRUCT	*credp;
 	struct cmsghdr		*cmp;

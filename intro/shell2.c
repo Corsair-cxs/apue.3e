@@ -3,8 +3,7 @@
 
 static void	sig_int(int);		/* our signal-catching function */
 
-int
-main(void)
+int main(void)
 {
 	char	buf[MAXLINE];	/* from apue.h */
 	pid_t	pid;
@@ -34,8 +33,7 @@ main(void)
 	exit(0);
 }
 
-void
-sig_int(int signo)
+void sig_int(int signo)
 {
 	printf("interrupt\n%% ");
 }

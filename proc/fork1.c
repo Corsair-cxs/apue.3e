@@ -3,8 +3,7 @@
 int		globvar = 6;		/* external variable in initialized data */
 char	buf[] = "a write to stdout\n";
 
-int
-main(void)
+int main(void)
 {
 	int		var;		/* automatic variable on the stack */
 	pid_t	pid;

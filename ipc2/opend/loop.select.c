@@ -1,8 +1,7 @@
 #include	"opend.h"
 #include	<sys/select.h>
 
-void
-loop(void)
+void loop(void)
 {
 	int		i, n, maxfd, maxi, listenfd, clifd, nread;
 	char	buf[MAXLINE];

@@ -201,8 +201,7 @@ _db_alloc(int namelen)
 /*
  * Relinquish access to the database.
  */
-void
-db_close(DBHANDLE h)
+void db_close(DBHANDLE h)
 {
 	_db_free((DB *)h);	/* closes fds, free buffers & struct */
 }
@@ -211,8 +210,7 @@ db_close(DBHANDLE h)
  * Free up a DB structure, and all the malloc'ed buffers it
  * may point to.  Also close the file descriptors if still open.
  */
-static void
-_db_free(DB *db)
+static void _db_free(DB *db)
 {
 	if (db->idxfd >= 0)
 		close(db->idxfd);
@@ -230,8 +228,7 @@ _db_free(DB *db)
 /*
  * Fetch a record.  Return a pointer to the null-terminated data.
  */
-char *
-db_fetch(DBHANDLE h, const char *key)
+char* db_fetch(DBHANDLE h, const char *key)
 {
 	DB      *db = h;
 	char	*ptr;
@@ -256,8 +253,7 @@ db_fetch(DBHANDLE h, const char *key)
  * Find the specified record.  Called by db_delete, db_fetch,
  * and db_store.  Returns with the hash chain locked.
  */
-static int
-_db_find_and_lock(DB *db, const char *key, int writelock)
+static int _db_find_and_lock(DB *db, const char *key, int writelock)
 {
 	off_t	offset, nextoffset;
 
@@ -421,8 +417,7 @@ _db_readidx(DB *db, off_t offset)
  * Read the current data record into the data buffer.
  * Return a pointer to the null-terminated data buffer.
  */
-static char *
-_db_readdat(DB *db)
+static char* _db_readdat(DB *db)
 {
 	if (lseek(db->datfd, db->datoff, SEEK_SET) == -1)
 		err_dump("_db_readdat: lseek error");
@@ -437,8 +432,7 @@ _db_readdat(DB *db)
 /*
  * Delete the specified record.
  */
-int
-db_delete(DBHANDLE h, const char *key)
+int db_delete(DBHANDLE h, const char *key)
 {
 	DB		*db = h;
 	int		rc = 0;			/* assume record will be found */
@@ -460,8 +454,7 @@ db_delete(DBHANDLE h, const char *key)
  * This function is called by db_delete and db_store, after
  * the record has been located by _db_find_and_lock.
  */
-static void
-_db_dodelete(DB *db)
+static void _db_dodelete(DB *db)
 {
 	int		i;
 	char	*ptr;
@@ -528,8 +521,7 @@ _db_dodelete(DB *db)
  * Write a data record.  Called by _db_dodelete (to write
  * the record with blanks) and db_store.
  */
-static void
-_db_writedat(DB *db, const char *data, off_t offset, int whence)
+static void _db_writedat(DB *db, const char *data, off_t offset, int whence)
 {
 	struct iovec	iov[2];
 	static char		newline = NEWLINE;
@@ -564,8 +556,7 @@ _db_writedat(DB *db, const char *data, off_t offset, int whence)
  * this function to set the datoff and datlen fields in the
  * DB structure, which we need to write the index record.
  */
-static void
-_db_writeidx(DB *db, const char *key,
+static void _db_writeidx(DB *db, const char *key,
              off_t offset, int whence, off_t ptrval)
 {
 	struct iovec	iov[2];
@@ -615,8 +606,7 @@ _db_writeidx(DB *db, const char *key,
  * Write a chain ptr field somewhere in the index file:
  * the free list, the hash table, or in an index record.
  */
-static void
-_db_writeptr(DB *db, off_t offset, off_t ptrval)
+static void _db_writeptr(DB *db, off_t offset, off_t ptrval)
 {
 	char	asciiptr[PTR_SZ + 1];
 
@@ -634,8 +624,7 @@ _db_writeptr(DB *db, off_t offset, off_t ptrval)
  * Store a record in the database.  Return 0 if OK, 1 if record
  * exists and DB_INSERT specified, -1 on error.
  */
-int
-db_store(DBHANDLE h, const char *key, const char *data, int flag)
+int db_store(DBHANDLE h, const char *key, const char *data, int flag)
 {
 	DB		*db = h;
 	int		rc, keylen, datlen;
@@ -749,8 +738,7 @@ doreturn:	/* unlock hash chain locked by _db_find_and_lock */
  * Try to find a free index record and accompanying data record
  * of the correct sizes.  We're only called by db_store.
  */
-static int
-_db_findfree(DB *db, int keylen, int datlen)
+static int _db_findfree(DB *db, int keylen, int datlen)
 {
 	int		rc;
 	off_t	offset, nextoffset, saveoffset;
@@ -809,8 +797,7 @@ _db_findfree(DB *db, int keylen, int datlen)
  * Automatically called by db_open.
  * Must be called before first db_nextrec.
  */
-void
-db_rewind(DBHANDLE h)
+void db_rewind(DBHANDLE h)
 {
 	DB		*db = h;
 	off_t	offset;
@@ -832,8 +819,7 @@ db_rewind(DBHANDLE h)
  * records.  db_rewind must be called before this function is
  * called the first time.
  */
-char *
-db_nextrec(DBHANDLE h, char *key)
+char* db_nextrec(DBHANDLE h, char *key)
 {
 	DB		*db = h;
 	char	c;

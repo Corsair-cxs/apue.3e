@@ -9,8 +9,7 @@
  * Create a server endpoint of a connection.
  * Returns fd if all OK, <0 on error.
  */
-int
-serv_listen(const char *name)
+int serv_listen(const char *name)
 {
 	int					fd, len, err, rval;
 	struct sockaddr_un	un;

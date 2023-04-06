@@ -10,8 +10,7 @@
  * else we return whatever optfunc() returns.  Note that user's buf[]
  * array is modified (nulls placed after each token).
  */
-int
-buf_args(char *buf, int (*optfunc)(int, char **))
+int buf_args(char *buf, int (*optfunc)(int, char **))
 {
 	char	*ptr, *argv[MAXARGC];
 	int		argc;

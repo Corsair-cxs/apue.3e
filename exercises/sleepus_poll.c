@@ -1,7 +1,6 @@
 #include <poll.h>
 
-void
-sleep_us(unsigned int nusecs)
+void sleep_us(unsigned int nusecs)
 {
 	struct pollfd	dummy;
 	int				timeout;

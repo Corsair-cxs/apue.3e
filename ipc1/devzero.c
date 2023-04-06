@@ -5,14 +5,12 @@
 #define	NLOOPS		1000
 #define	SIZE		sizeof(long)	/* size of shared memory area */
 
-static int
-update(long *ptr)
+static int update(long *ptr)
 {
 	return((*ptr)++);	/* return value before increment */
 }
 
-int
-main(void)
+int main(void)
 {
 	int		fd, i, counter;
 	pid_t	pid;

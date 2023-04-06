@@ -3,8 +3,7 @@
 
 #define	FIFO	"temp.fifo"
 
-int
-main(void)
+int main(void)
 {
 	int		fdread, fdwrite;
 

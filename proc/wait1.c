@@ -1,8 +1,7 @@
 #include "apue.h"
 #include <sys/wait.h>
 
-int
-main(void)
+int main(void)
 {
 	pid_t	pid;
 	int		status;

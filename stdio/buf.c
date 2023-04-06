@@ -5,8 +5,7 @@ int		is_unbuffered(FILE *);
 int		is_linebuffered(FILE *);
 int		buffer_size(FILE *);
 
-int
-main(void)
+int main(void)
 {
 	FILE	*fp;
 
@@ -27,8 +26,7 @@ main(void)
 	exit(0);
 }
 
-void
-pr_stdio(const char *name, FILE *fp)
+void pr_stdio(const char *name, FILE *fp)
 {
 	printf("stream = %s, ", name);
 	if (is_unbuffered(fp))
@@ -46,60 +44,51 @@ pr_stdio(const char *name, FILE *fp)
 
 #if defined(_IO_UNBUFFERED)
 
-int
-is_unbuffered(FILE *fp)
+int is_unbuffered(FILE *fp)
 {
 	return(fp->_flags & _IO_UNBUFFERED);
 }
 
-int
-is_linebuffered(FILE *fp)
+int is_linebuffered(FILE *fp)
 {
 	return(fp->_flags & _IO_LINE_BUF);
 }
 
-int
-buffer_size(FILE *fp)
+int buffer_size(FILE *fp)
 {
 	return(fp->_IO_buf_end - fp->_IO_buf_base);
 }
 
 #elif defined(__SNBF)
 
-int
-is_unbuffered(FILE *fp)
+int is_unbuffered(FILE *fp)
 {
 	return(fp->_flags & __SNBF);
 }
 
-int
-is_linebuffered(FILE *fp)
+int is_linebuffered(FILE *fp)
 {
 	return(fp->_flags & __SLBF);
 }
 
-int
-buffer_size(FILE *fp)
+int buffer_size(FILE *fp)
 {
 	return(fp->_bf._size);
 }
 
 #elif defined(_IONBF)
 
-int
-is_unbuffered(FILE *fp)
+int is_unbuffered(FILE *fp)
 {
     return(fp->_flags & _IONBF);
 }
 
-int
-is_linebuffered(FILE *fp)
+int is_linebuffered(FILE *fp)
 {
 	return(fp->_flags & _IOLBF);
 }
 
-int
-buffer_size(FILE *fp)
+int buffer_size(FILE *fp)
 {
 #ifdef _LP64
     return(fp->_IO_buf_end - fp->_IO_buf_base);

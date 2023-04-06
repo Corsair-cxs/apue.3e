@@ -13,8 +13,7 @@
 unsigned long long count;
 struct timeval end;
 
-void
-checktime(char *str)
+void checktime(char *str)
 {
 	struct timeval	tv;
 
@@ -25,8 +24,7 @@ checktime(char *str)
 	}
 }
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	pid_t	pid;
 	char	*s;

@@ -3,8 +3,7 @@
 
 static void	sig_cld(int);
 
-int
-main()
+int main()
 {
 	pid_t	pid;
 
@@ -21,8 +20,7 @@ main()
 	exit(0);
 }
 
-static void
-sig_cld(int signo)	/* interrupts pause() */
+static void sig_cld(int signo)	/* interrupts pause() */
 {
 	pid_t	pid;
 	int		status;

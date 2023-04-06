@@ -5,8 +5,7 @@
 
 static void	pr_limits(char *, int);
 
-int
-main(void)
+int main(void)
 {
 #ifdef	RLIMIT_AS
 	doit(RLIMIT_AS);
@@ -64,8 +63,7 @@ main(void)
 	exit(0);
 }
 
-static void
-pr_limits(char *name, int resource)
+static void pr_limits(char *name, int resource)
 {
 	struct rlimit		limit;
 	unsigned long long	lim;

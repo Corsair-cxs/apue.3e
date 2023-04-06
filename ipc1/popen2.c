@@ -3,8 +3,7 @@
 
 #define	PAGER	"${PAGER:-more}" /* environment variable, or default */
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	char	line[MAXLINE];
 	FILE	*fpin, *fpout;

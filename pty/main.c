@@ -11,8 +11,7 @@ static void	set_noecho(int);	/* at the end of this file */
 void		do_driver(char *);	/* in the file driver.c */
 void		loop(int, int);		/* in the file loop.c */
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int				fdm, c, ignoreeof, interactive, noecho, verbose;
 	pid_t			pid;
@@ -100,8 +99,7 @@ main(int argc, char *argv[])
 	exit(0);
 }
 
-static void
-set_noecho(int fd)		/* turn off echo (for slave pty) */
+static void set_noecho(int fd)		/* turn off echo (for slave pty) */
 {
 	struct termios	stermios;
 

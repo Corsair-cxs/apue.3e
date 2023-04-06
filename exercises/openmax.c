@@ -4,8 +4,7 @@
 
 #define OPEN_MAX_GUESS	256
 
-long
-open_max(void)
+long open_max(void)
 {
 	long openmax;
 	struct rlimit rl;

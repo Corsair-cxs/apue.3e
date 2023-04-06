@@ -2,8 +2,7 @@
 
 #define	BUFFSIZE	1024
 
-static void
-sig_tstp(int signo)	/* signal handler for SIGTSTP */
+static void sig_tstp(int signo)	/* signal handler for SIGTSTP */
 {
 	sigset_t	mask;
 
@@ -27,8 +26,7 @@ sig_tstp(int signo)	/* signal handler for SIGTSTP */
 	/* ... reset tty mode, redraw screen ... */
 }
 
-int
-main(void)
+int main(void)
 {
 	int		n;
 	char	buf[BUFFSIZE];

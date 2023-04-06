@@ -2,8 +2,7 @@
 
 #define BSZ 48
 
-int
-main()
+int main()
 {
 	FILE *fp;
 	char buf[BSZ];

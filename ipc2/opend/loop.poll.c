@@ -21,8 +21,7 @@ grow_pollfd(struct pollfd *pfd, int *maxfd)
 	return(pfd);
 }
 
-void
-loop(void)
+void loop(void)
 {
 	int				i, listenfd, clifd, nread;
 	char			buf[MAXLINE];

@@ -5,8 +5,7 @@ struct foo {
 	int a, b, c, d;
 };
 
-void
-printfoo(const char *s, const struct foo *fp)
+void printfoo(const char *s, const struct foo *fp)
 {
 	fputs(s, stdout);
 	printf("  structure at 0x%lx\n", (unsigned long)fp);
@@ -16,8 +15,7 @@ printfoo(const char *s, const struct foo *fp)
 	printf("  foo.d = %d\n", fp->d);
 }
 
-void *
-thr_fn1(void *arg)
+void* thr_fn1(void *arg)
 {
 	struct foo *fp;
 
@@ -31,8 +29,7 @@ thr_fn1(void *arg)
 	return((void *)fp);
 }
 
-int
-main(void)
+int main(void)
 {
 	int err;
 	pthread_t tid1;

@@ -22,8 +22,7 @@ extern int heapsort(void *, size_t, size_t,
 /*
  * Compare two long integers (helper function for heapsort)
  */
-int
-complong(const void *arg1, const void *arg2)
+int complong(const void *arg1, const void *arg2)
 {
 	long l1 = *(long *)arg1;
 	long l2 = *(long *)arg2;
@@ -39,8 +38,7 @@ complong(const void *arg1, const void *arg2)
 /*
  * Worker thread to sort a portion of the set of numbers.
  */
-void *
-thr_fn(void *arg)
+void* thr_fn(void *arg)
 {
 	long	idx = (long)arg;
 
@@ -56,8 +54,7 @@ thr_fn(void *arg)
 /*
  * Merge the results of the individual sorted ranges.
  */
-void
-merge()
+void merge()
 {
 	long	idx[NTHR];
 	long	i, minidx, sidx, num;
@@ -77,8 +74,7 @@ merge()
 	}
 }
 
-int
-main()
+int main()
 {
 	unsigned long	i;
 	struct timeval	start, end;

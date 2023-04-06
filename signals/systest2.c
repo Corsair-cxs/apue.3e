@@ -1,19 +1,16 @@
 #include "apue.h"
 
-static void
-sig_int(int signo)
+static void sig_int(int signo)
 {
 	printf("caught SIGINT\n");
 }
 
-static void
-sig_chld(int signo)
+static void sig_chld(int signo)
 {
 	printf("caught SIGCHLD\n");
 }
 
-int
-main(void)
+int main(void)
 {
 	if (signal(SIGINT, sig_int) == SIG_ERR)
 		err_sys("signal(SIGINT) error");

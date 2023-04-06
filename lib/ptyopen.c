@@ -5,8 +5,7 @@
 #include <stropts.h>
 #endif
 
-int
-ptym_open(char *pts_name, int pts_namesz)
+int ptym_open(char *pts_name, int pts_namesz)
 {
 	char	*ptr;
 	int		fdm, err;
@@ -34,8 +33,7 @@ errout:
 	return(-1);
 }
 
-int
-ptys_open(char *pts_name)
+int ptys_open(char *pts_name)
 {
 	int fds;
 #if defined(SOLARIS)

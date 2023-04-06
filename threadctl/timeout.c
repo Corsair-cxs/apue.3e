@@ -21,8 +21,7 @@ struct to_info {
 #define CLOCK_REALTIME 0
 #define USECTONSEC 1000		/* microseconds to nanoseconds */
 
-void
-clock_gettime(int id, struct timespec *tsp)
+void clock_gettime(int id, struct timespec *tsp)
 {
 	struct timeval tv;
 
@@ -32,8 +31,7 @@ clock_gettime(int id, struct timespec *tsp)
 }
 #endif
 
-void *
-timeout_helper(void *arg)
+void* timeout_helper(void *arg)
 {
 	struct to_info	*tip;
 
@@ -44,8 +42,7 @@ timeout_helper(void *arg)
 	return(0);
 }
 
-void
-timeout(const struct timespec *when, void (*func)(void *), void *arg)
+void timeout(const struct timespec *when, void (*func)(void *), void *arg)
 {
 	struct timespec	now;
 	struct to_info	*tip;
@@ -84,8 +81,7 @@ timeout(const struct timespec *when, void (*func)(void *), void *arg)
 pthread_mutexattr_t attr;
 pthread_mutex_t mutex;
 
-void
-retry(void *arg)
+void retry(void *arg)
 {
 	pthread_mutex_lock(&mutex);
 
@@ -94,8 +90,7 @@ retry(void *arg)
 	pthread_mutex_unlock(&mutex);
 }
 
-int
-main(void)
+int main(void)
 {
 	int				err, condition, arg;
 	struct timespec	when;

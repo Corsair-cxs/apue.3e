@@ -1,8 +1,7 @@
 #include "apue.h"
 #include <fcntl.h>
 
-int
-set_cloexec(int fd)
+int set_cloexec(int fd)
 {
 	int		val;
 

@@ -13,8 +13,7 @@ static long	openmax = 0;
  */
 #define	OPEN_MAX_GUESS	256
 
-long
-open_max(void)
+long open_max(void)
 {
 	if (openmax == 0) {		/* first time through */
 		errno = 0;

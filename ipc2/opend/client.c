@@ -2,8 +2,7 @@
 
 #define	NALLOC	10		/* # client structs to alloc/realloc for */
 
-static void
-client_alloc(void)		/* alloc more entries in the client[] array */
+static void client_alloc(void)		/* alloc more entries in the client[] array */
 {
 	int		i;
 
@@ -24,8 +23,7 @@ client_alloc(void)		/* alloc more entries in the client[] array */
 /*
  * Called by loop() when connection request from a new client arrives.
  */
-int
-client_add(int fd, uid_t uid)
+int client_add(int fd, uid_t uid)
 {
 	int		i;
 
@@ -48,8 +46,7 @@ again:
 /*
  * Called by loop() when we're done with a client.
  */
-void
-client_del(int fd)
+void client_del(int fd)
 {
 	int		i;
 

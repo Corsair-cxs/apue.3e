@@ -8,8 +8,7 @@
 extern int connect_retry(int, int, int, const struct sockaddr *,
 	socklen_t);
 
-void
-print_uptime(int sockfd)
+void print_uptime(int sockfd)
 {
 	int		n;
 	char	buf[BUFLEN];
@@ -20,8 +19,7 @@ print_uptime(int sockfd)
 		err_sys("recv error");
 }
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	struct addrinfo	*ailist, *aip;
 	struct addrinfo	hint;

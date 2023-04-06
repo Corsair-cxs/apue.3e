@@ -2,8 +2,7 @@
 
 static void	sig_int(int);
 
-int
-main(void)
+int main(void)
 {
 	sigset_t	newmask, oldmask, waitmask;
 
@@ -49,8 +48,7 @@ main(void)
 	exit(0);
 }
 
-static void
-sig_int(int signo)
+static void sig_int(int signo)
 {
 	pr_mask("\nin sig_int: ");
 }

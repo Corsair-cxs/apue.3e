@@ -7,8 +7,7 @@ sigset_t	mask;
 pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t waitloc = PTHREAD_COND_INITIALIZER;
 
-void *
-thr_fn(void *arg)
+void* thr_fn(void *arg)
 {
 	int err, signo;
 
@@ -35,8 +34,7 @@ thr_fn(void *arg)
 	}
 }
 
-int
-main(void)
+int main(void)
 {
 	int			err;
 	sigset_t	oldmask;

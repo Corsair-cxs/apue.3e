@@ -6,8 +6,7 @@ static struct termios		save_termios;
 static int					ttysavefd = -1;
 static enum { RESET, RAW, CBREAK }	ttystate = RESET;
 
-int
-tty_cbreak(int fd)	/* put terminal into a cbreak mode */
+int tty_cbreak(int fd)	/* put terminal into a cbreak mode */
 {
 	int				err;
 	struct termios	buf;
@@ -59,8 +58,7 @@ tty_cbreak(int fd)	/* put terminal into a cbreak mode */
 	return(0);
 }
 
-int
-tty_raw(int fd)		/* put terminal into a raw mode */
+int tty_raw(int fd)		/* put terminal into a raw mode */
 {
 	int				err;
 	struct termios	buf;
@@ -138,8 +136,7 @@ tty_raw(int fd)		/* put terminal into a raw mode */
 	return(0);
 }
 
-int
-tty_reset(int fd)		/* restore terminal's mode */
+int tty_reset(int fd)		/* restore terminal's mode */
 {
 	if (ttystate == RESET)
 		return(0);
@@ -149,8 +146,7 @@ tty_reset(int fd)		/* restore terminal's mode */
 	return(0);
 }
 
-void
-tty_atexit(void)		/* can be set up by atexit(tty_atexit) */
+void tty_atexit(void)		/* can be set up by atexit(tty_atexit) */
 {
 	if (ttysavefd >= 0)
 		tty_reset(ttysavefd);

@@ -15,8 +15,7 @@ int log_to_stderr = 1;
 
 void submit_file(int, int, const char *, size_t, int);
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int				fd, sfd, err, text, c;
 	struct stat		sbuf;
@@ -68,8 +67,7 @@ main(int argc, char *argv[])
 /*
  * Send a file to the printer daemon.
  */
-void
-submit_file(int fd, int sockfd, const char *fname, size_t nbytes,
+void submit_file(int fd, int sockfd, const char *fname, size_t nbytes,
             int text)
 {
 	int					nr, nw, len;

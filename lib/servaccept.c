@@ -12,8 +12,7 @@
  * that it must bind before calling us.
  * Returns new fd if all OK, <0 on error
  */
-int
-serv_accept(int listenfd, uid_t *uidptr)
+int serv_accept(int listenfd, uid_t *uidptr)
 {
 	int					clifd, err, rval;
 	socklen_t			len;

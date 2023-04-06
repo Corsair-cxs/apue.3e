@@ -3,8 +3,7 @@
 
 #define RWRWRW (S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH|S_IWOTH)
 
-int
-main(void)
+int main(void)
 {
 	umask(0);
 	if (creat("foo", RWRWRW) < 0)

@@ -3,8 +3,7 @@
 
 char	*env_init[] = { "USER=unknown", "PATH=/tmp", NULL };
 
-int
-main(void)
+int main(void)
 {
 	pid_t	pid;
 

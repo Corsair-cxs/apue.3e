@@ -2,8 +2,7 @@
 #include <sys/socket.h>
 #include <sys/un.h>
 
-int
-main(void)
+int main(void)
 {
 	int fd, size;
 	struct sockaddr_un un;

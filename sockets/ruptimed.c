@@ -13,8 +13,7 @@
 
 extern int initserver(int, const struct sockaddr *, socklen_t, int);
 
-void
-serve(int sockfd)
+void serve(int sockfd)
 {
 	int		clfd;
 	FILE	*fp;
@@ -40,8 +39,7 @@ serve(int sockfd)
 	}
 }
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	struct addrinfo	*ailist, *aip;
 	struct addrinfo	hint;

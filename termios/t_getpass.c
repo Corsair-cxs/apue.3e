@@ -2,8 +2,7 @@
 
 char	*getpass(const char *);
 
-int
-main(void)
+int main(void)
 {
 	char	*ptr;
 

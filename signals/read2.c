@@ -4,8 +4,7 @@
 static void		sig_alrm(int);
 static jmp_buf	env_alrm;
 
-int
-main(void)
+int main(void)
 {
 	int		n;
 	char	line[MAXLINE];
@@ -24,8 +23,7 @@ main(void)
 	exit(0);
 }
 
-static void
-sig_alrm(int signo)
+static void sig_alrm(int signo)
 {
 	longjmp(env_alrm, 1);
 }

@@ -11,14 +11,12 @@ pthread_mutex_t env_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 extern char **environ;
 
-static void
-thread_init(void)
+static void thread_init(void)
 {
 	pthread_key_create(&key, free);
 }
 
-char *
-getenv(const char *name)
+char* getenv(const char *name)
 {
 	int		i, len;
 	char	*envbuf;

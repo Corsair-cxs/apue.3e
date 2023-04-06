@@ -4,8 +4,7 @@
 
 char	buf[500000];
 
-int
-main(void)
+int main(void)
 {
 	int		ntowrite, nwrite;
 	char	*ptr;

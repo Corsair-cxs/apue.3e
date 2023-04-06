@@ -7,8 +7,7 @@
 #include <sys/filio.h>
 #endif
 
-int
-setasync(int sockfd)
+int setasync(int sockfd)
 {
 	int n;
 
@@ -20,8 +19,7 @@ setasync(int sockfd)
 	return(0);
 }
 
-int
-clrasync(int sockfd)
+int clrasync(int sockfd)
 {
 	int n;
 

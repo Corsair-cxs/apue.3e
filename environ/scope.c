@@ -1,5 +1,4 @@
-int
-f1(int val)
+int f1(int val)
 {
 	int		num = 0;
 	int		*ptr = &num;

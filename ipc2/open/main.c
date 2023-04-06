@@ -3,8 +3,7 @@
 
 #define	BUFFSIZE	8192
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int		n, fd;
 	char	buf[BUFFSIZE], line[MAXLINE];

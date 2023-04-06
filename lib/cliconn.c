@@ -10,8 +10,7 @@
  * Create a client endpoint and connect to a server.
  * Returns fd if all OK, <0 on error.
  */
-int
-cli_conn(const char *name)
+int cli_conn(const char *name)
 {
 	int					fd, len, err, rval;
 	struct sockaddr_un	un, sun;

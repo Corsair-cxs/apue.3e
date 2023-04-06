@@ -1,8 +1,7 @@
 #include "apue.h"
 #include <fcntl.h>
 
-int
-main(void)
+int main(void)
 {
 	int i, n;
 	int fd[2];

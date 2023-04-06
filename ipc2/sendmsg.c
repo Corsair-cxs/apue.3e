@@ -8,8 +8,7 @@ struct mymesg {
 	char mtext[MAXMSZ];
 };
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	key_t key;
 	long qid;

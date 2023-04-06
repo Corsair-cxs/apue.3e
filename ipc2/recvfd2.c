@@ -27,8 +27,7 @@ static struct cmsghdr	*cmptr = NULL;		/* malloc'ed first time */
  * received is passed to (*userfunc)(STDERR_FILENO, buf, nbytes).
  * We have a 2-byte protocol for receiving the fd from send_fd().
  */
-int
-recv_ufd(int fd, uid_t *uidptr,
+int recv_ufd(int fd, uid_t *uidptr,
          ssize_t (*userfunc)(int, const void *, size_t))
 {
 	struct cmsghdr		*cmp;

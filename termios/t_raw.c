@@ -1,15 +1,13 @@
 #include "apue.h"
 
-static void
-sig_catch(int signo)
+static void sig_catch(int signo)
 {
 	printf("signal caught\n");
 	tty_reset(STDIN_FILENO);
 	exit(0);
 }
 
-int
-main(void)
+int main(void)
 {
 	int		i;
 	char	c;

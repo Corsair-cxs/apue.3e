@@ -15,8 +15,7 @@
  *
  * LOCKING: none.
  */
-int
-getaddrlist(const char *host, const char *service,
+int getaddrlist(const char *host, const char *service,
   struct addrinfo **ailistpp)
 {
 	int				err;
@@ -40,8 +39,7 @@ getaddrlist(const char *host, const char *service,
  *
  * LOCKING: none.
  */
-static char *
-scan_configfile(char *keyword)
+static char* scan_configfile(char *keyword)
 {
 	int				n, match;
 	FILE			*fp;
@@ -72,8 +70,7 @@ scan_configfile(char *keyword)
  *
  * LOCKING: none.
  */
-char *
-get_printserver(void)
+char* get_printserver(void)
 {
 	return(scan_configfile("printserver"));
 }
@@ -108,8 +105,7 @@ get_printaddr(void)
  *
  * LOCKING: none.
  */
-ssize_t
-tread(int fd, void *buf, size_t nbytes, unsigned int timout)
+ssize_t tread(int fd, void *buf, size_t nbytes, unsigned int timout)
 {
 	int				nfds;
 	fd_set			readfds;
@@ -135,8 +131,7 @@ tread(int fd, void *buf, size_t nbytes, unsigned int timout)
  *
  * LOCKING: none.
  */
-ssize_t
-treadn(int fd, void *buf, size_t nbytes, unsigned int timout)
+ssize_t treadn(int fd, void *buf, size_t nbytes, unsigned int timout)
 {
 	size_t	nleft;
 	ssize_t	nread;

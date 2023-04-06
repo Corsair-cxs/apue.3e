@@ -22,8 +22,7 @@
 #endif
 
 #if !defined(BSD)
-static unsigned long
-compt2ulong(comp_t comptime)	/* convert comp_t to unsigned long */
+static unsigned long compt2ulong(comp_t comptime)	/* convert comp_t to unsigned long */
 {
 	unsigned long	val;
 	int				exp;
@@ -36,8 +35,7 @@ compt2ulong(comp_t comptime)	/* convert comp_t to unsigned long */
 }
 #endif
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	struct acct		acdata;
 	FILE			*fp;

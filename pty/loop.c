@@ -5,8 +5,7 @@
 static void	sig_term(int);
 static volatile sig_atomic_t	sigcaught;	/* set by signal handler */
 
-void
-loop(int ptym, int ignoreeof)
+void loop(int ptym, int ignoreeof)
 {
 	pid_t	child;
 	int		nread;
@@ -63,8 +62,7 @@ loop(int ptym, int ignoreeof)
  * The child sends us SIGTERM when it gets EOF on the pty slave or
  * when read() fails.  We probably interrupted the read() of ptym.
  */
-static void
-sig_term(int signo)
+static void sig_term(int signo)
 {
 	sigcaught = 1;		/* just set flag and return */
 }

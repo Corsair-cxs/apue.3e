@@ -2,8 +2,7 @@
 #include "apue_db.h"
 #include <fcntl.h>
 
-int
-main(void)
+int main(void)
 {
 	DBHANDLE	db;
 

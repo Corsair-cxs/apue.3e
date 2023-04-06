@@ -1,8 +1,7 @@
 #include	"opend.h"
 #include	<fcntl.h>
 
-void
-handle_request(char *buf, int nread, int clifd, uid_t uid)
+void handle_request(char *buf, int nread, int clifd, uid_t uid)
 {
 	int		newfd;
 

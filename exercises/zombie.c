@@ -6,8 +6,7 @@
 #define PSCMD	"ps -o pid,ppid,state,tty,command"
 #endif
 
-int
-main(void)
+int main(void)
 {
 	pid_t	pid;
 

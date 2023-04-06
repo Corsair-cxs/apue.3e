@@ -2,8 +2,7 @@
 
 static void charatatime(char *);
 
-int
-main(void)
+int main(void)
 {
 	pid_t	pid;
 
@@ -17,8 +16,7 @@ main(void)
 	exit(0);
 }
 
-static void
-charatatime(char *str)
+static void charatatime(char *str)
 {
 	char	*ptr;
 	int		c;

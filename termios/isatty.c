@@ -1,7 +1,6 @@
 #include	<termios.h>
 
-int
-isatty(int fd)
+int isatty(int fd)
 {
 	struct termios	ts;
 

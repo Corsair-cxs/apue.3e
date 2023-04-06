@@ -4,8 +4,7 @@
 pthread_mutex_t lock1 = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t lock2 = PTHREAD_MUTEX_INITIALIZER;
 
-void
-prepare(void)
+void prepare(void)
 {
 	int err;
 
@@ -16,8 +15,7 @@ prepare(void)
 		err_cont(err, "can't lock lock2 in prepare handler");
 }
 
-void
-parent(void)
+void parent(void)
 {
 	int err;
 
@@ -28,8 +26,7 @@ parent(void)
 		err_cont(err, "can't unlock lock2 in parent handler");
 }
 
-void
-child(void)
+void child(void)
 {
 	int err;
 
@@ -40,16 +37,14 @@ child(void)
 		err_cont(err, "can't unlock lock2 in child handler");
 }
 
-void *
-thr_fn(void *arg)
+void* thr_fn(void *arg)
 {
 	printf("thread started...\n");
 	pause();
 	return(0);
 }
 
-int
-main(void)
+int main(void)
 {
 	int			err;
 	pid_t		pid;

@@ -3,8 +3,7 @@
 
 void make_temp(char *template);
 
-int
-main()
+int main()
 {
 	char	good_template[] = "/tmp/dirXXXXXX";	/* right way */
 	char	*bad_template = "/tmp/dirXXXXXX";	/* wrong way*/
@@ -16,8 +15,7 @@ main()
 	exit(0);
 }
 
-void
-make_temp(char *template)
+void make_temp(char *template)
 {
 	int			fd;
 	struct stat	sbuf;

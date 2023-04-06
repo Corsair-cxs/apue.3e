@@ -5,8 +5,7 @@
 
 jmp_buf	jmpbuffer;
 
-int
-main(void)
+int main(void)
 {
 	char	line[MAXLINE];
 
@@ -19,8 +18,7 @@ main(void)
 
  . . .
 
-void
-cmd_add(void)
+void cmd_add(void)
 {
 	int		token;
 

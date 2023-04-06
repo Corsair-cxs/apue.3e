@@ -1,8 +1,7 @@
 #include "apue.h"
 #include <shadow.h>
 
-int
-main(void)		/* Linux/Solaris version */
+int main(void)		/* Linux/Solaris version */
 {
 	struct spwd	*ptr;
 

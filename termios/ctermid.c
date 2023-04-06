@@ -3,8 +3,7 @@
 
 static char	ctermid_name[L_ctermid];
 
-char *
-ctermid(char *str)
+char* ctermid(char *str)
 {
 	if (str == NULL)
 		str = ctermid_name;

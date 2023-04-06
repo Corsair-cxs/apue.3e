@@ -1,8 +1,7 @@
 #include "apue.h"
 #include <fcntl.h>
 
-pid_t
-lock_test(int fd, int type, off_t offset, int whence, off_t len)
+pid_t lock_test(int fd, int type, off_t offset, int whence, off_t len)
 {
 	struct flock	lock;
 

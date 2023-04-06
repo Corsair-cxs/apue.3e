@@ -2,16 +2,14 @@
 
 static void	f1(void), f2(void);
 
-int
-main(void)
+int main(void)
 {
 	f1();
 	f2();
 	_exit(0);
 }
 
-static void
-f1(void)
+static void f1(void)
 {
 	pid_t	pid;
 
@@ -20,8 +18,7 @@ f1(void)
 	/* child and parent both return */
 }
 
-static void
-f2(void)
+static void f2(void)
 {
 	char	buf[1000];		/* automatic variables */
 	int		i;

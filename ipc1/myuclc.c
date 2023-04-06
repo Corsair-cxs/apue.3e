@@ -1,8 +1,7 @@
 #include "apue.h"
 #include <ctype.h>
 
-int
-main(void)
+int main(void)
 {
 	int		c;
 

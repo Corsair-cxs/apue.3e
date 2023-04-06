@@ -3,8 +3,7 @@
 
 #define	DEF_PAGER	"/bin/more"		/* default pager program */
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int		n;
 	int		fd[2];

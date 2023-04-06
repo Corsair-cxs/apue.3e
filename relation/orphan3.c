@@ -1,14 +1,12 @@
 #include "apue.h"
 #include <errno.h>
 
-static void
-sig_hup(int signo)
+static void sig_hup(int signo)
 {
 	printf("SIGHUP received, pid = %ld\n", (long)getpid());
 }
 
-static void
-pr_ids(char *name)
+static void pr_ids(char *name)
 {
 	printf("%s: pid = %ld, ppid = %ld, pgrp = %ld, tpgrp = %ld\n",
 	    name, (long)getpid(), (long)getppid(), (long)getpgrp(),
@@ -16,8 +14,7 @@ pr_ids(char *name)
 	fflush(stdout);
 }
 
-int
-main(void)
+int main(void)
 {
 	char	c;
 	pid_t	pid;

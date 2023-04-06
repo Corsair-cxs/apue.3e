@@ -11,8 +11,7 @@ static int		dopath(Myfunc *);
 
 static long	nreg, ndir, nblk, nchr, nfifo, nslink, nsock, ntot;
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int		ret;
 
@@ -120,8 +119,7 @@ dopath(Myfunc* func)
 	return(ret);
 }
 
-static int
-myfunc(const char *pathname, const struct stat *statptr, int type)
+static int myfunc(const char *pathname, const struct stat *statptr, int type)
 {
 	switch (type) {
 	case FTW_F:

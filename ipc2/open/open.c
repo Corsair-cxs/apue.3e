@@ -5,8 +5,7 @@
  * Open the file by sending the "name" and "oflag" to the
  * connection server and reading a file descriptor back.
  */
-int
-csopen(char *name, int oflag)
+int csopen(char *name, int oflag)
 {
 	int				len;
 	char			buf[12];

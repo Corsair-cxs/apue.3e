@@ -1,7 +1,6 @@
 #include "apue.h"
 
-int
-main(void)
+int main(void)
 {
 	char	buf[MAXLINE];
 

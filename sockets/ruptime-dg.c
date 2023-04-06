@@ -6,13 +6,11 @@
 #define BUFLEN		128
 #define TIMEOUT		20
 
-void
-sigalrm(int signo)
+void sigalrm(int signo)
 {
 }
 
-void
-print_uptime(int sockfd, struct addrinfo *aip)
+void print_uptime(int sockfd, struct addrinfo *aip)
 {
 	int		n;
 	char	buf[BUFLEN];
@@ -30,8 +28,7 @@ print_uptime(int sockfd, struct addrinfo *aip)
 	write(STDOUT_FILENO, buf, n);
 }
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	struct addrinfo		*ailist, *aip;
 	struct addrinfo		hint;

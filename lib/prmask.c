@@ -1,8 +1,7 @@
 #include "apue.h"
 #include <errno.h>
 
-void
-pr_mask(const char *str)
+void pr_mask(const char *str)
 {
 	sigset_t	sigset;
 	int			errno_save;

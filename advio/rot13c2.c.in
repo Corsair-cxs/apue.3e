@@ -22,14 +22,12 @@ struct buf {
 
 struct buf bufs[NBUF];
 
-unsigned char
-translate(unsigned char c)
+unsigned char translate(unsigned char c)
 {
 	/* same as before */
 }
 
-int
-main(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
 	int					ifd, ofd, i, j, n, err, numop;
 	struct stat			sbuf;

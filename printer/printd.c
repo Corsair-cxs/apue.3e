@@ -95,8 +95,7 @@ void		client_cleanup(void *);
  *
  * LOCKING: none.
  */
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	pthread_t			tid;
 	struct addrinfo		*ailist, *aip;
@@ -191,8 +190,7 @@ main(int argc, char *argv[])
  *
  * LOCKING: none, except for record-lock on job ID file.
  */
-void
-init_request(void)
+void init_request(void)
 {
 	int		n;
 	char	name[FILENMSZ];
@@ -218,8 +216,7 @@ init_request(void)
  *
  * LOCKING: none.
  */
-void
-init_printer(void)
+void init_printer(void)
 {
 	printer = get_printaddr();
 	if (printer == NULL)
@@ -236,8 +233,7 @@ init_printer(void)
  *
  * LOCKING: none.
  */
-void
-update_jobno(void)
+void update_jobno(void)
 {
 	char	buf[32];
 
@@ -272,8 +268,7 @@ get_newjobno(void)
  *
  * LOCKING: acquires and releases joblock.
  */
-void
-add_job(struct printreq *reqp, int32_t jobid)
+void add_job(struct printreq *reqp, int32_t jobid)
 {
 	struct job	*jp;
 
@@ -298,8 +293,7 @@ add_job(struct printreq *reqp, int32_t jobid)
  *
  * LOCKING: acquires and releases joblock.
  */
-void
-replace_job(struct job *jp)
+void replace_job(struct job *jp)
 {
 	pthread_mutex_lock(&joblock);
 	jp->prev = NULL;
@@ -317,8 +311,7 @@ replace_job(struct job *jp)
  *
  * LOCKING: caller must hold joblock.
  */
-void
-remove_job(struct job *target)
+void remove_job(struct job *target)
 {
 	if (target->next != NULL)
 		target->next->prev = target->prev;
@@ -335,8 +328,7 @@ remove_job(struct job *target)
  *
  * LOCKING: none.
  */
-void
-build_qonstart(void)
+void build_qonstart(void)
 {
 	int				fd, err, nr;
 	int32_t			jobid;
@@ -389,8 +381,7 @@ build_qonstart(void)
  *
  * LOCKING: none.
  */
-void *
-client_thread(void *arg)
+void* client_thread(void *arg)
 {
 	int					n, fd, sockfd, nr, nw, first;
 	int32_t				jobid;
@@ -527,8 +518,7 @@ client_thread(void *arg)
  *
  * LOCKING: acquires and releases workerlock.
  */
-void
-add_worker(pthread_t tid, int sockfd)
+void add_worker(pthread_t tid, int sockfd)
 {
 	struct worker_thread	*wtp;
 
@@ -553,8 +543,7 @@ add_worker(pthread_t tid, int sockfd)
  *
  * LOCKING: acquires and releases workerlock.
  */
-void
-kill_workers(void)
+void kill_workers(void)
 {
 	struct worker_thread	*wtp;
 
@@ -569,8 +558,7 @@ kill_workers(void)
  *
  * LOCKING: acquires and releases workerlock.
  */
-void
-client_cleanup(void *arg)
+void client_cleanup(void *arg)
 {
 	struct worker_thread	*wtp;
 	pthread_t				tid;
@@ -600,8 +588,7 @@ client_cleanup(void *arg)
  *
  * LOCKING: acquires and releases configlock.
  */
-void *
-signal_thread(void *arg)
+void* signal_thread(void *arg)
 {
 	int		err, signo;
 
@@ -636,8 +623,7 @@ signal_thread(void *arg)
  *
  * LOCKING: none.
  */
-char *
-add_option(char *cp, int tag, char *optname, char *optval)
+char* add_option(char *cp, int tag, char *optname, char *optval)
 {
 	int		n;
 	union {
@@ -665,8 +651,7 @@ add_option(char *cp, int tag, char *optname, char *optval)
  *
  * LOCKING: acquires and releases joblock and configlock.
  */
-void *
-printer_thread(void *arg)
+void* printer_thread(void *arg)
 {
 	struct job		*jp;
 	int				hlen, ilen, sockfd, fd, nr, nw, extra;
@@ -846,8 +831,7 @@ defer:
  *
  * LOCKING: none.
  */
-ssize_t
-readmore(int sockfd, char **bpp, int off, int *bszp)
+ssize_t readmore(int sockfd, char **bpp, int off, int *bszp)
 {
 	ssize_t	nr;
 	char	*bp = *bpp;
@@ -872,8 +856,7 @@ readmore(int sockfd, char **bpp, int off, int *bszp)
  *
  * LOCKING: none.
  */
-int
-printer_status(int sfd, struct job *jp)
+int printer_status(int sfd, struct job *jp)
 {
 	int				i, success, code, len, found, bufsz, datsz;
 	int32_t			jobid;

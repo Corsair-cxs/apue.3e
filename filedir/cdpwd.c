@@ -1,7 +1,6 @@
 #include "apue.h"
 
-int
-main(void)
+int main(void)
 {
 	char	*ptr;
 	size_t		size;

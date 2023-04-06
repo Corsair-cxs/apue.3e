@@ -18,8 +18,7 @@ struct mymesg {
 	char mtext[MAXMSZ];
 };
 
-void *
-helper(void *arg)
+void* helper(void *arg)
 {
 	int					n;
 	struct mymesg		m;
@@ -34,8 +33,7 @@ helper(void *arg)
 	}
 }
 
-int
-main()
+int main()
 {
 	int					i, n, err;
 	int					fd[2];

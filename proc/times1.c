@@ -4,8 +4,7 @@
 static void	pr_times(clock_t, struct tms *, struct tms *);
 static void	do_cmd(char *);
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int		i;
 
@@ -15,8 +14,7 @@ main(int argc, char *argv[])
 	exit(0);
 }
 
-static void
-do_cmd(char *cmd)		/* execute and time the "cmd" */
+static void do_cmd(char *cmd)		/* execute and time the "cmd" */
 {
 	struct tms	tmsstart, tmsend;
 	clock_t		start, end;
@@ -37,8 +35,7 @@ do_cmd(char *cmd)		/* execute and time the "cmd" */
 	pr_exit(status);
 }
 
-static void
-pr_times(clock_t real, struct tms *tmsstart, struct tms *tmsend)
+static void pr_times(clock_t real, struct tms *tmsstart, struct tms *tmsend)
 {
 	static long		clktck = 0;
 

@@ -4,8 +4,7 @@
 char	buf1[] = "abcdefghij";
 char	buf2[] = "ABCDEFGHIJ";
 
-int
-main(void)
+int main(void)
 {
 	int		fd;
 

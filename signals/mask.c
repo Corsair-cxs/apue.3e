@@ -7,8 +7,7 @@ static void						sig_alrm(int);
 static sigjmp_buf				jmpbuf;
 static volatile sig_atomic_t	canjump;
 
-int
-main(void)
+int main(void)
 {
 	if (signal(SIGUSR1, sig_usr1) == SIG_ERR)
 		err_sys("signal(SIGUSR1) error");
@@ -29,8 +28,7 @@ main(void)
 		pause();
 }
 
-static void
-sig_usr1(int signo)
+static void sig_usr1(int signo)
 {
 	time_t	starttime;
 
@@ -51,8 +49,7 @@ sig_usr1(int signo)
 	siglongjmp(jmpbuf, 1);	/* jump back to main, don't return */
 }
 
-static void
-sig_alrm(int signo)
+static void sig_alrm(int signo)
 {
 	pr_mask("in sig_alrm: ");
 }

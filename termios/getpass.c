@@ -4,8 +4,7 @@
 
 #define	MAX_PASS_LEN	8		/* max #chars for user to enter */
 
-char *
-getpass(const char *prompt)
+char* getpass(const char *prompt)
 {
 	static char		buf[MAX_PASS_LEN + 1];	/* null byte at end */
 	char			*ptr;

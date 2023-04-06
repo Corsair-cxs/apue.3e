@@ -8,8 +8,7 @@
 
 char	array[ARRAY_SIZE];	/* uninitialized data = bss */
 
-int
-main(void)
+int main(void)
 {
 	int		shmid;
 	char	*ptr, *shmptr;

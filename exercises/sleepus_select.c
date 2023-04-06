@@ -1,8 +1,7 @@
 #include "apue.h"
 #include <sys/select.h>
 
-void
-sleep_us(unsigned int nusecs)
+void sleep_us(unsigned int nusecs)
 {
 	struct timeval	tval;
 

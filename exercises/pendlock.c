@@ -2,13 +2,11 @@
 #include <fcntl.h>
 #include <errno.h>
 
-void
-sigint(int signo)
+void sigint(int signo)
 {
 }
 
-int
-main(void)
+int main(void)
 {
 	pid_t pid1, pid2, pid3;
 	int fd;

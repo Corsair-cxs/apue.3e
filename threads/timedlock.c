@@ -1,8 +1,7 @@
 #include "apue.h"
 #include <pthread.h>
 
-int
-main(void)
+int main(void)
 {
 	int err;
 	struct timespec tout;

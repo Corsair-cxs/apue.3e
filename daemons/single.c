@@ -12,8 +12,7 @@
 
 extern int lockfile(int);
 
-int
-already_running(void)
+int already_running(void)
 {
 	int		fd;
 	char	buf[16];

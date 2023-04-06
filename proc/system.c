@@ -2,8 +2,7 @@
 #include	<errno.h>
 #include	<unistd.h>
 
-int
-system(const char *cmdstring)	/* version without signal handling */
+int system(const char *cmdstring)	/* version without signal handling */
 {
 	pid_t	pid;
 	int		status;

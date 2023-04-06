@@ -4,8 +4,7 @@ char	 errmsg[MAXLINE];
 int		 oflag;
 char	*pathname;
 
-int
-main(void)
+int main(void)
 {
 	int		nread;
 	char	buf[MAXLINE];

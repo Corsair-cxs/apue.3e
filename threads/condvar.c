@@ -11,8 +11,7 @@ pthread_cond_t qready = PTHREAD_COND_INITIALIZER;
 
 pthread_mutex_t qlock = PTHREAD_MUTEX_INITIALIZER;
 
-void
-process_msg(void)
+void process_msg(void)
 {
 	struct msg *mp;
 
@@ -27,8 +26,7 @@ process_msg(void)
 	}
 }
 
-void
-enqueue_msg(struct msg *mp)
+void enqueue_msg(struct msg *mp)
 {
 	pthread_mutex_lock(&qlock);
 	mp->m_next = workq;

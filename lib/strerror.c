@@ -5,8 +5,7 @@ extern char	*sys_errlist[];
 extern int	sys_nerr;
 #endif
 
-char *
-strerror(int error)
+char* strerror(int error)
 {
 	static char	mesg[30];
 

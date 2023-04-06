@@ -2,8 +2,7 @@
 
 int		globvar = 6;		/* external variable in initialized data */
 
-int
-main(void)
+int main(void)
 {
 	int		var;		/* automatic variable on the stack */
 	pid_t	pid;
